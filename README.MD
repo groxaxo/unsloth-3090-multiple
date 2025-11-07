@@ -1,4 +1,4 @@
-# Unsloth Docker for RTX 5000 Series (SM\_120 / Compute 12.0)
+# Unsloth Docker for NVIDIA Ampere GPUs (RTX 3090 / Compute 8.6)
 
 ![Multi GPU](images/config.png)
 
@@ -8,7 +8,7 @@ A prebuilt Docker container with:
 
 * ✅ **Patched Unsloth** and **Unsloth Zoo**
 * ⚡ **Precompiled PyTorch 2.8.0**, FlashAttention 2.7.4, Triton, and Accelerate
-* 🚀 Full support for RTX 5000 series GPUs (e.g., RTX 5090) with **Compute Capability 12.0 (SM\_120)**
+* 🚀 Full support for NVIDIA Ampere architecture GPUs (e.g., RTX 3090) with **Compute Capability 8.6**
 
 Ideal for multi-GPU fine-tuning and inference.
 
@@ -16,7 +16,7 @@ Ideal for multi-GPU fine-tuning and inference.
 
 ## ✅ Tested On
 
-* 🖥️ **GPU:** 3× NVIDIA RTX 5090
+* 🖥️ **GPU:** 3× NVIDIA RTX 3090
 * 🐧 **OS:** Ubuntu 24.04.2 LTS
 * 🧠 **Kernel:** `6.11.0-25-generic`
 
@@ -46,7 +46,7 @@ docker pull rgilbreth/rtx-5xxx-unsloth-training
 <summary><strong>📜 Scripts</strong></summary>
 
 * `unsloth_Accelerate.py`
-  Enables multi-GPU training via `accelerate` and `unsloth`, tailored for RTX 5000 cards.
+  Enables multi-GPU training via `accelerate` and `unsloth`, tailored for NVIDIA Ampere GPUs (RTX 3090).
 
 * `unsloth_Accelerate-Docker.py`
   Docker-specific variant with environment assumptions preconfigured.

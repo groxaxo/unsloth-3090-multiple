@@ -61,7 +61,9 @@ UNSLOTH_COMPILE_USE_TEMP = False
 # Disable some compilations if old versions are seen
 OLD_TORCH_VERSION = Version(torch.__version__) < Version("2.5.0")
 major, minor = torch.cuda.get_device_capability()
-OLD_CUDA_ARCH_VERSION = (major <= 7) and (minor < 5)
+# Only disable for very old architectures (pre-Turing, i.e., before compute 7.5)
+# This ensures Ampere (8.x), Ada Lovelace (8.9), Hopper (9.x), and Blackwell (10.x+) are all supported
+OLD_CUDA_ARCH_VERSION = (major < 7) or (major == 7 and minor < 5)
 OLD_TRITON_VERSION = Version(triton.__version__) < Version("3.0.0")
 
 # Check if Unsloth Studio is allowed
